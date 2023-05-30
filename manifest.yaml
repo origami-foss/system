@@ -1,0 +1,19 @@
+ref: origami/${basearch}/coreos/plasma/stable
+include: fedora-config/manifests/bootable-rpm-ostree.yaml
+
+automatic-version-prefix: "<date:%Y%m%d>"
+mutate-os-release: "${automatic-version-prefix}"
+
+releasever: 38
+
+variables:
+  stream: stable
+  prod: true
+
+rpmdb: sqlite
+
+packages:
+  - neofetch
+
+repos:
+  - fedora
